@@ -1,0 +1,42 @@
+.title{
+  color: #dddddd;
+}
+.a1{
+  color: #ffffff;
+  padding-left: 20px;
+}
+.a2{
+  color: #f7e4e4;
+  padding-left: 20px;
+}
+
+.nav-height {
+  min-height: 50px !important;
+  height: 50px !important;
+}
+
+.content-move-right {
+  margin-left: 170px !important;
+  transition: ease 0.2s;
+}
+
+.content-move-left {
+  margin-left: 10px !important;
+  transition: ease 0.1s;
+}
+
+.active-link {
+  background: blue;
+  color: white;
+}
+
+.mat-button:hover {
+  background: blue;
+  color: white;
+}
+.j{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;}
