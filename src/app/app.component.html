@@ -10,7 +10,9 @@
         <a class="a1" mat-button [routerLink]="['/about']" routerLinkActive="'active-link'">
             <mat-icon mat-list-icon>bookmark_border</mat-icon>
         </a>
-        <a class="a1" mat-button [routerLink]="['/students']" routerLinkActive="'active-link'">
+        <a class="a1" mat-button [routerLink]="['/students']" routerLinkActive="'active-link'"
+        matBadge="{{totalStudent}}"
+        matBadgeColor="warn"matBadgeSize="small">
             <mat-icon mat-list-icon>perm_identity</mat-icon>
         </a>
     </div>
@@ -26,8 +28,14 @@
                 <a mat-list-item [routerLink]="['/about']" >
                     <mat-icon mat-list-icon>filter_none</mat-icon>About    
                 </a>
-                    <a mat-list-item [routerLink]="['/students']">
-                        <mat-icon mat-list-icon>perm_identity</mat-icon>Student</a>
+                    <a mat-list-item [routerLink]="['/students']" >
+                        <mat-icon mat-list-icon>perm_identity</mat-icon>Student
+                      
+                    
+                    </a>
+
+
+
                 <a mat-list-item (click)="sidenav.toggle()"mat-list-item>
                     <mat-icon mat-list-icon>cancel</mat-icon></a>
    

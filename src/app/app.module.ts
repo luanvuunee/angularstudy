@@ -60,6 +60,7 @@ import {MatTreeModule} from '@angular/material/tree';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +86,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MatListModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInputModule,MatBadgeModule,MatProgressSpinnerModule
     
     
     
