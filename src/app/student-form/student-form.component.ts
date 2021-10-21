@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from '../models/Student';
 import { CommonService } from '../Services/common.service';
 import { HttpClientService } from '../Services/http-client.service';
@@ -12,7 +12,9 @@ import { HttpClientService } from '../Services/http-client.service';
   styleUrls: ['./student-form.component.scss']
 })
 export class StudentFormComponent implements OnInit {
-  
+ 
+  public id= 0;
+  results = {}
   public  studentForm = new FormGroup({
     code: new FormControl(''),
     gender: new FormControl(''),
@@ -23,43 +25,110 @@ export class StudentFormComponent implements OnInit {
     phone: new FormControl(''),
     picture: new FormControl(''),
   });
-
+  
+ 
   constructor(
     private commonService: CommonService,
     private httpclinet: HttpClientService,
     private router: Router,
+    private route: ActivatedRoute,
   ) { }
-
   ngOnInit(): void {
-    
+  this.id = Number(this.route.snapshot.paramMap.get('id'));
+  if(this.id >0){
+    this.loadData(this.id);
   }
-  public onSubmit() {
-    console.log('onSubmit');
+  }
+  private loadData(id:any) {
+    this.httpclinet.getStudent(id).subscribe((data)=>{
+      console.log('Student Data', data);
+      for(const controlName in this.studentForm.controls){
+        if(controlName){
+          this.studentForm.controls[controlName].setValue(data[controlName]);
+        }
+      }
+    })
+  }
+  /**
+   * saveData
+   */
+  public createNewData() {
     const newStudent:any = {};
     for(const controlName in this.studentForm.controls){
       if(controlName){
         newStudent[controlName] = this.studentForm.controls[controlName].value;
       }
     }
-   
-    try {
-      this.httpclinet.postNewStudents(newStudent).subscribe(newdata => {
-        console.log(newStudent);
-        this.commonService.setTotalStudent(newStudent.length)
-        console.log("s ="+this.commonService.setTotalStudent);
-        
-       
-      })
-    } catch (error) {
+    return newStudent as Student
+  }
+ 
+  public saveandReturnStudent() {
+      this.id > 0 ? 
+      this.httpclinet.modifyStudent(this.id,this.createNewData()).subscribe((newdata) => {
+      }): 
+      this.httpclinet.postNewStudents(this.createNewData()).subscribe((newdata) => {
       
+      })
+      this.Confirm();
+      
+      
+    
+  }
+  public saveandaddnewStudent() {
+      this.id > 0 ? this.httpclinet.modifyStudent(this.id,this.createNewData()).subscribe((newdata) => {
+      })
+      : 
+      this.httpclinet.postNewStudents(this.createNewData()).subscribe((newdata) => {
+        this.commonService.increamentStudent();
+        this.studentForm.reset();
+      })
+
+    }
+    /**
+     * Confirm
+     */
+    public Confirm() {
+      var userPreference;
+
+    if (confirm("Do you want to save changes?") == true) {
+       userPreference = "Data saved successfully!";
+    this.router.navigate(['students'])
+    } else {
+        userPreference = "Save Cancelled!";
+      }
       
     }
-    
-    setTimeout( () => {this.router.navigate(['students'])},3000);
-    
-    
-    
-    // TODO: Use EventEmitter with form value
-    //console.warn(this.studentForm.value);
+    /**
+     * randomStudent
+     */
+    public randomStudent() {
+      
+     this.httpclinet.getRandomStudent().subscribe((data) =>{
+       console.log(data);
+       
+
+       try {
+        if(data && data.results && data.results.length >0){
+          const student = data.results[0];
+          this.studentForm.controls.code.setValue(
+            (student.id.name||'')+'VN'+(student.id.value||'')
+          );
+          this.studentForm.controls.gender.setValue(student.gender)
+          this.studentForm.controls.firstName.setValue(student.name.first)
+          this.studentForm.controls.lastName.setValue(student.name.last)
+          this.studentForm.controls.email.setValue(student.email)
+          this.studentForm.controls.phone.setValue(student.phone)
+          this.studentForm.controls.picture.setValue(student.picture.large)
+        }
+        window.alert("Get Successfully");
+
+         
+       } catch (error) {
+         
+       }
+       
+       
+     })
+    }
   }
-}
+  

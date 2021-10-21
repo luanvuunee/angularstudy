@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from '../models/Student';
 import { CommonService } from '../Services/common.service';
 import { HttpClientService } from '../Services/http-client.service';
@@ -18,10 +18,17 @@ export class StudentsComponent implements OnInit {
   constructor(
     private commonService: CommonService,
     private httpclinet: HttpClientService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    ) 
+    { }
 
   ngOnInit(): void {
-  this.refreshData()
+    
+
+
+
+  this.refreshData();
   }
   private refreshData() {
     this.httpclinet.getStudents().subscribe((data) => {
@@ -46,25 +53,34 @@ export class StudentsComponent implements OnInit {
    * addStudent
    */
   public addStudent() {
-    this.router.navigate(['student-form'])
+    this.router.navigate(['student-form',0]);
   }
   public deleteStudents(studentId: any) {
-    console.log('student',studentId);
-    this.httpclinet.deleteStudent(studentId).subscribe((response:any) => {
-      console.log(response);
-      setTimeout(() => { 
-        this.load();
-        this.refreshData();
-       
-        
-      }, 1000);
-      
-     
+    var userPreference;
+  if (confirm("Do you want to save changes?") == true) {
+    
+     this.httpclinet.deleteStudent(studentId).subscribe((response:any) => {
+      this.refreshData();
+      userPreference = "Data saved successfully!";
     })
-   
-  
     
 
+  } else {
+      userPreference = "Save Cancelled!";
+    }
+    
+   
+    
   }
+  /**
+   * editStudent
+   */
+  public editStudent(studentId: any) {
+    this.router.navigate(['student-form',studentId])
+    
+    
+  }
+
+  
    
 }

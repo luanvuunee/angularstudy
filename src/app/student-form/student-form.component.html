@@ -1,8 +1,9 @@
 <form class="example-form" 
-    [formGroup]="studentForm" (ngSubmit)="onSubmit()"
+    [formGroup]="studentForm"
 
 >
-    Add a new
+    Add a new student to List of Students
+    
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Code</mat-label>
       <input matInput placeholder="VN" formControlName="code">
@@ -27,12 +28,38 @@
         <mat-label>Phone</mat-label>
         <input matInput placeholder="911911"formControlName="phone" >
     </mat-form-field>
-    <button
-    type="submit"
-    class="btn btn-sucess"
-    mat-raised-button color="accent"
-    [disabled]="!studentForm.valid"
-    >
-    Submit
-    </button>
+     &nbsp;
+     <div>
+        <button
+        (click)="saveandReturnStudent()"
+         class="btn btn-sucess"
+         mat-raised-button color="accent"
+         [disabled]="!studentForm.valid"
+         >
+         &nbsp;
+         Submit & Go to Home
+         </button>
+      
+         &nbsp;
+         <button
+         (click)="saveandaddnewStudent()"
+         class="btn btn-sucess"
+         mat-raised-button color="accent"
+         [disabled]="!studentForm.valid"
+         > &nbsp;
+         Submit & AddNewPost
+         </button>
+        
+         &nbsp;
+         <button
+         (click)="randomStudent()"
+         class="btn btn-sucess"
+         [disabled]="!studentForm.valid"
+         mat-raised-button color="primary"
+        *ngIf="id===0"
+         >
+        Add Random Student
+         </button>
+        </div>
+  
   </form>

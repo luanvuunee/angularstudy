@@ -48,6 +48,13 @@ export class HttpClientService {
     .get<any>(url,this.httpOptions)
     .pipe();
   }
+  public getStudent(studentId: number) {
+    const url = `${this.REST_API_URL}students/`+studentId;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe();
+  }
+
 
   
   public postNewPosts(data:any) {
@@ -62,6 +69,14 @@ export class HttpClientService {
     return this.httpClient.post(url,data,this.httpOptions)
     
   }
+  /**
+   * modifyStudent
+   */
+  public modifyStudent(studentId: number,data :Student) {
+    const url =`${this.REST_API_URL}students/`+studentId;
+    return this.httpClient.put<any>(url,data,this.httpOptions)
+    
+  }
 
   /**
    * deleteStudent
@@ -69,6 +84,16 @@ export class HttpClientService {
   public deleteStudent(studentId:number) {
     const url =`${this.REST_API_URL}students/`+studentId;
     return this.httpClient.delete<any>(url)
+    
+  }
+
+  /**
+   * getRandomStudent
+   */
+  public getRandomStudent() {
+    const url = `https://randomuser.me/api/?results=1`;
+    return this.httpClient.get<any>
+    (url,this.httpOptions)
     
   }
   // public deletePost(data:any) {
