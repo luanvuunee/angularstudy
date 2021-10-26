@@ -1,0 +1,41 @@
+<p>Welcome back ! {{name}}</p>
+
+<h3 class="notification">
+     Profile
+  <a class="badge">{{posts ? posts.length :0}}</a> 
+  </h3>
+<h3>Your age {{age|number}}</h3>
+<!-- <h5>Your sex {{sex}}</h5> -->
+
+<!-- <h2 *ngFor="let comment of comments">
+  <li>
+   {{comments|json}}
+  </li> 
+</h2> -->
+
+<h3>
+    Wanna to add new posts?
+    <br>
+    <button class="btn btn-primary" (click)="addNewPost()">Hit the button</button>
+</h3>
+<!-- <h3 *ngFor="let post of posts">
+   <li>
+    {{post|json}}
+   </li> 
+</h3> -->
+<!-- <button (click)="deletePost()">
+    Wanna to delete?
+</button> -->
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Actor</th>
+      <th>Author</th>
+    </tr>
+    <tr *ngFor="let post of posts">
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.author}}</td>
+    </tr>
+   
+  </table>

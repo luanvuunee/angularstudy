@@ -23,14 +23,18 @@ public totalStudent = 0;
 ) { }
 
 ngOnInit(): void {
+  this.loadData();
+}
+private loadData() {
   this.commonService.totalStudent$.subscribe((total)=>{
-  this.totalStudent = total;
-  })
-  //khi data = 0 thi
-
-  this.totalStudent === 0 ? this.httpclinet.getStudents().subscribe((data) =>{
-    this.commonService.setTotalStudent(data.length);
-  }) :this.totalStudent;
+    this.totalStudent = total;
+    })
+    //khi data = 0 thi
+  
+    this.totalStudent === 0 ? this.httpclinet.getStudents().subscribe((data) =>{
+      this.commonService.setTotalStudent(data.length);
+    }) :this.totalStudent;
+    
   
 }
   /**
