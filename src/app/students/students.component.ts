@@ -15,19 +15,15 @@ export class StudentsComponent implements OnInit {
   notifications =0;
   showSnipper =false;
 
-  constructor(
+  constructor
+  (
     private commonService: CommonService,
     private httpclinet: HttpClientService,
     private router: Router,
-    private route: ActivatedRoute,
-    ) 
+    private route: ActivatedRoute,) 
     { }
 
   ngOnInit(): void {
-    
-
-
-
   this.refreshData();
   }
   private refreshData() {
@@ -35,10 +31,6 @@ export class StudentsComponent implements OnInit {
       console.log(data);
       this.students=data;
       this.commonService.setTotalStudent(data.length)
-        console.log("s ",this.commonService.setTotalStudent);
-      // this.name = data.name;
-      // this.age = data.age;
-      // this.sex = data.sex;
     });
     
     
@@ -77,8 +69,6 @@ export class StudentsComponent implements OnInit {
    */
   public editStudent(studentId: any) {
     this.router.navigate(['student-form',studentId])
-    
-    
   }
 
   
