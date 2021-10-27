@@ -87,7 +87,7 @@ export class StudentFormComponent implements OnInit {
     /**
      * Confirm
      */
-    public Confirm() {
+    public Confirm() { 
       var userPreference;
 
     if (confirm("Do you want to save changes?") == true) {
@@ -103,8 +103,8 @@ export class StudentFormComponent implements OnInit {
      */
     public randomStudent() {
       
-     this.httpclinet.getRandomStudent().subscribe((data) =>{
-       console.log(data);
+     this.httpclinet.getRandomStudent().subscribe((data) =>{  
+       console.log(); 
        
 
        try {
