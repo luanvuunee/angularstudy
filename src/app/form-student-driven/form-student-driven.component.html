@@ -1,0 +1,53 @@
+<div class="styteForm">
+  <form class="example-form" (submit)="onSubmit(form)" #form="ngForm" novalidate>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Code</mat-label>
+      <input matInput placeholder="VN" ngModel name="code" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="Fukuda" ngModel name="firstName"> 
+      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Ozawa" ngModel name="lastName" > 
+    </mat-form-field> 
+    <mat-form-field class="example-full-width" >
+        <mat-label>Gender</mat-label>
+        <input matInput placeholder="Male/Female" ngModel name="gender">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="123@mail.vn" ngModel name="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="911911" ngModel name="phone">
+    </mat-form-field>
+    &nbsp;
+    <div>
+       <button
+        class="btn btn-sucess"
+        mat-raised-button color="accent"
+        type="submit"
+        >
+        &nbsp;
+        Submit & Go to Home
+        </button>
+     
+        &nbsp;
+        <button
+       
+        class="btn btn-sucess"
+        mat-raised-button color="accent"
+      
+        > &nbsp;
+        Submit & AddNewPost
+        </button>
+       
+        &nbsp;
+      
+       </div>
+  
+  </form>
+</div>

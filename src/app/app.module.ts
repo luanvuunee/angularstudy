@@ -16,7 +16,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-import { StudentsComponent } from './students/students.component';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -57,6 +56,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import { FormStudentDrivenComponent } from './form-student-driven/form-student-driven.component';
 
 
 
@@ -69,9 +69,11 @@ import {MatTreeModule} from '@angular/material/tree';
     NotFoundComponent,
     FontBoldDirective,
     LoginFormComponent,
-    StudentsComponent,
     DasboardComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    FormStudentDrivenComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

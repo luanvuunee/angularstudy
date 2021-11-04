@@ -19,7 +19,9 @@ export class HttpClientService {
 
  
    
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient
+    
+    ) {}
 
   public getProfile():Observable<any> {
     const url = `${this.REST_API_URL}profile`;

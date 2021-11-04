@@ -3,4 +3,72 @@
 <h2 style="text-align:center"> おはようございます。</h2>
 <h3 style="text-align:center">このアプリは「学生管理」ってアプリでございます。</h3>
 
+  <div style="margin:10px">
+    <button (click)="addStudent()" mat-flat-button color="primary" style="margin:10px" >
+        Student Form Driven
+        <mat-icon>add</mat-icon>
+        </button>
+        <button (click)="addStudentDriven()" mat-flat-button color="accent">
+            Student Form Control
+            <mat-icon>add</mat-icon>
+            </button>
+
+  </div> 
+<div>
+<table id="customers">
+  <tr>
+   
+    <th>Code</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Avatar</th>
+    <th>Delete</th>
+    
+    
+  </tr>
+  <tr *ngFor="let student of students">
+  
+    <td>{{student?.id}}</td>
+    <td>{{student?.firstName}}</td>
+    <td>{{student?.lastName}}</td>
+    <td>{{student?.gender}}</td>
+    <td>{{student?.email}}</td>
+    <td>{{student?.phone}}</td>
+
+    <td>
+     <img *ngIf="student?.picture"
+     src="{{student?.picture}}" 
+     height="50"
+     alt="">
+
+    </td>
+    
+    <td style="cursor: pointer;"> 
+      <mat-icon 
+      color="warn"
+      (click)="deleteStudents(student.id)"
+      >
+      delete</mat-icon>
+   
+      <mat-icon 
+      color="warn"
+      (click)="editStudent(student.id)"
+      >
+      edit</mat-icon>
+    </td >
+
+  </tr>
+  
+
+</table>
+</div>
+
+
+
+
+
+
 

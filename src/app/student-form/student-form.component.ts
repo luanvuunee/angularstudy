@@ -41,7 +41,7 @@ export class StudentFormComponent implements OnInit {
   }
   private loadData(id:any) {
     this.httpclinet.getStudent(id).subscribe((data)=>{
-      console.log('Student Data', data);
+      // console.log('Student Data', data);
       for(const controlName in this.studentForm.controls){
         if(controlName){
           this.studentForm.controls[controlName].setValue(data[controlName]);
@@ -79,7 +79,7 @@ export class StudentFormComponent implements OnInit {
       })
       : 
       this.httpclinet.postNewStudents(this.createNewData()).subscribe((newdata) => {
-        this.commonService.increamentStudent();
+        
         this.studentForm.reset();
       })
 
@@ -92,7 +92,7 @@ export class StudentFormComponent implements OnInit {
 
     if (confirm("Do you want to save changes?") == true) {
        userPreference = "Data saved successfully!";
-    this.router.navigate(['students'])
+    this.router.navigate(['dashboard'])
     } else {
         userPreference = "Save Cancelled!";
       }
