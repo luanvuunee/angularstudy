@@ -2,8 +2,118 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Sơn Tùng MTP",
+      "author": "Singer"
+    },
+    {
+      "id": 2,
+      "title": "Ronaldo",
+      "author": "CR7"
+    },
+    {
+      "id": 3,
+      "title": "LEO MESSI",
+      "author": "Football Player"
+    },
+    {
+      "id": 4,
+      "title": "Mixi-Gaming",
+      "author": "Streamer"
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 5
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 6
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 7
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 8
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 9
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 10
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 11
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 12
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 13
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 14
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 15
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 16
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 17
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 18
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 19
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 20
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 21
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 22
+    },
+    {
+      "title": "AlabaTrap",
+      "author": "Tommy Teo",
+      "id": 23
     }
   ],
   "comments": [
@@ -14,6 +124,76 @@
     }
   ],
   "profile": {
-    "name": "typicode"
-  }
+    "name": "Luan",
+    "age": 26,
+    "sex": "male"
+  },
+  "students": [
+    {
+      "code": "DNIVN15750057-E",
+      "gender": "female",
+      "firstName": "Celia",
+      "lastName": "Molina",
+      "dob": null,
+      "email": "celia.molina@example.com",
+      "phone": "902-503-531",
+      "picture": "https://randomuser.me/api/portraits/women/94.jpg",
+      "id": 12
+    },
+    {
+      "code": "VN",
+      "gender": "female",
+      "firstName": "Olivia",
+      "lastName": "Wong",
+      "dob": null,
+      "email": "olivia.wong@example.com",
+      "phone": "686-866-0880",
+      "picture": "https://randomuser.me/api/portraits/women/7.jpg",
+      "id": 13
+    },
+    {
+      "code": "PPSVN7567468T",
+      "gender": "female",
+      "firstName": "Kaitlin",
+      "lastName": "Anderson",
+      "dob": null,
+      "email": "kaitlin.anderson@example.com",
+      "phone": "011-283-6646",
+      "picture": "https://randomuser.me/api/portraits/women/64.jpg",
+      "id": 14
+    },
+    {
+      "code": "VN",
+      "gender": "female",
+      "firstName": "زهرا",
+      "lastName": "زارعی",
+      "dob": "",
+      "email": "zhr.zraay@example.com",
+      "phone": "028-61122625",
+      "picture": "https://randomuser.me/api/portraits/women/67.jpg",
+      "id": 15
+    },
+    {
+      "code": "VN",
+      "gender": "male",
+      "firstName": "Isaías",
+      "lastName": "Viana",
+      "dob": "",
+      "email": "isaias.viana@example.com",
+      "phone": "(24) 7512-6911ss",
+      "picture": "https://randomuser.me/api/portraits/men/68.jpg",
+      "id": 10
+    },
+    {
+      "code": "VNs",
+      "gender": "male",
+      "firstName": "Isaías",
+      "lastName": "Viana",
+      "dob": "",
+      "email": "isaias.viana@example.com",
+      "phone": "(24) 7512-6911ss",
+      "picture": "https://randomuser.me/api/portraits/men/68.jpg",
+      "id": 10
+    }
+  ]
 }
